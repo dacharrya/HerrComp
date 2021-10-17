@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main{} 
+int main ()
 { 
 
 float xover= 1.23e40;
