@@ -1,10 +1,7 @@
 #include <iostream>
 
-<<<<<<< HEAD:errores1.cpp
-int main () 
-=======
 int main ()
->>>>>>> 7b307ef286f3804fbab7648887f8e7298c11b295:errornum.cpp
+
 { 
 
 float xover= 1.23e40;

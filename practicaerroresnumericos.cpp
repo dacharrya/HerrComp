@@ -1,14 +1,14 @@
 #include<cmath>
 #include <iostream>
 
-double fact(int a)
+float fact(int a)
 {
   int F = 1;
   for (int i=1; i <= a; i++)
     {
       F = F * i;
     }
-  return 0;
+  return F;
 }
 
 double mysin( double x, int N)
@@ -18,20 +18,19 @@ double mysin( double x, int N)
     {
       seno = seno + pow(-1,k) * pow(x, 2 * k + 1)/ fact(2 * k + 1);
     }
-  std::cout <<"\n"<< seno << std::endl;
- return 0;
+  
+ return seno;
 }
  
 int main ()
 {
   std::cout.setf(std::ios::scientific);
-  std::cout.precision(5);
+  std::cout.precision(9);
   const double x = M_PI/3;
   const double exact = std::sin(x);
-
-  for(int NMAX = 1 ; NMAX <= 10; NMAX++) {
-    double diff = std::fabs(mysin(x, NMAX) - exact)/exact;
-    std::cout << NMAX << "\t" << diff << "\n";
+  for(int N = 1 ; N <= 100; N++) {
+    double diff = std::fabs(mysin(x, N) - exact)/exact;
+    std::cout << N << "\t" << diff << "\n";
 
   }
 
