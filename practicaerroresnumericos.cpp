@@ -25,11 +25,11 @@ double mysin( double x, int N)
 int main ()
 {
   std::cout.setf(std::ios::scientific);
-  std::cout.precision(9);
+  std::cout.precision(6);
   const double x = M_PI/3;
   const double exact = std::sin(x);
-  for(int N = 1 ; N <= 100; N++) {
-    double diff = std::fabs(mysin(x, N) - exact)/exact;
+  for(int N = 1 ; N <= 1000; N++) {
+    double diff = std::fabs((mysin(x, N) - exact)/exact);
     std::cout << N << "\t" << diff << "\n";
 
   }
