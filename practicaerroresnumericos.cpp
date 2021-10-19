@@ -1,9 +1,9 @@
 #include<cmath>
 #include <iostream>
 
-float fact(int a)
+double fact(int a)
 {
-  int F = 1;
+  double F = 1;
   for (int i=1; i <= a; i++)
     {
       F = F * i;
@@ -25,7 +25,7 @@ double mysin( double x, int N)
 int main ()
 {
   std::cout.setf(std::ios::scientific);
-  std::cout.precision(6);
+  std::cout.precision(9);
   const double x = M_PI/3;
   const double exact = std::sin(x);
   for(int N = 1 ; N <= 1000; N++) {

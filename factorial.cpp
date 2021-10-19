@@ -4,7 +4,7 @@
 
 int main ()
 {
-  int F = 1, a ;
+  long double F = 1, a ;
 
   std::cout << " ¿Que factorial necesita? ";
   std::cin >> a;
