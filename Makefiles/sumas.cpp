@@ -1,11 +1,11 @@
 #include <iostream>
-
+#include<cmath>
 
 
 
 typedef float REAL;
-REAL SUMUP(int N);
-REAL SUMDOWN(int N);
+REAL sumup(int N);
+REAL sumdown(int N);
 
 int main (void)
 {
@@ -13,16 +13,21 @@ int main (void)
   std::cout.setf(std::ios::scientific);
 
   
-  std::cout << "\n" << SUMUP (2)<< "\n"  << std::endl;
-  std::cout << "\n" << SUMDOWN (2)  << "\n" << std::endl;
+  std::cout << "\n" << sumup (2)<< "\n"  << std::endl;
+  std::cout << "\n" << sumdown (2)  << "\n" << std::endl;
 
+  for (int ii = 1; ii <= 1000; ++ii){
+    REAL suma1 = sumup(ii);
+    REAL suma2 = sumdown(ii);
+    std::cout << ii <<"\t" << std::fabs(1 - suma1/suma2) <<std::endl;
 
+      }
   return 0;
   
 }
 
 
-REAL SUMUP(int N)
+REAL sumup(int N)
 {
 
   REAL suma = 0;
@@ -33,7 +38,7 @@ REAL SUMUP(int N)
 }
 
 
-REAL SUMDOWN(int N)
+REAL sumdown(int N)
 {
 
   REAL suma = 0;
