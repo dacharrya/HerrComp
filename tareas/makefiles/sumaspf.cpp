@@ -2,7 +2,7 @@
 #include<cmath>
 
 
-typedef float REAL;
+typedef double REAL;
 REAL sumone(int N);
 REAL sumtwo(int N);
 REAL sumthree(int N);
@@ -31,8 +31,8 @@ int main (void)
   std::cout.precision(6);
   std::cout.setf(std::ios::scientific);
   
-  //  std::cout << "Número de términos a usar : ";
-  //std::cin >> N;
+  // std::cout << "Número de términos a usar : ";
+  // std::cin >> N;
 
  
   for (int ii = 1.0; ii <= N  ; ++ii)
@@ -72,10 +72,10 @@ REAL sumtwo(int N)
 
 REAL sumthree(int N)
 {
-  double sum3;
+  double sum3 = 0;
   for (int k=1.0; k <= N ; k++)
     {
-  sum3 = frac (1.0 , multi( 2.0 * k , 2.0 * k +1.0 ));
+  sum3 += frac (1.0 , multi( 2.0 * k , 2.0 * k +1.0 ));
     }
  return sum3;
 }
