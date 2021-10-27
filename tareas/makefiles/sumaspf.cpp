@@ -27,7 +27,7 @@ double frac (double jj, double ji)
 int main (void)
 {
 
-  int N = 10;
+  int N = 1000;
   std::cout.precision(6);
   std::cout.setf(std::ios::scientific);
   
@@ -38,11 +38,13 @@ int main (void)
   for (int ii = 1.0; ii <= N  ; ++ii)
     {
       
-    REAL suma1 = sumone(ii);
-    REAL suma2 = sumtwo(ii);
-    REAL suma3 = sumthree(ii);
-    
-    std::cout << ii <<"\t"<< suma1 <<"\t"<< suma2 <<"\t"<< suma3 << "\t" << std::fabs(1.0 - suma1/suma3) << "\t" << std::fabs(1.0 - suma2/suma3) <<std::endl;
+    double suma1 = sumone(ii);
+    double suma2 = sumtwo(ii);
+    double suma3 = sumthree(ii);
+    double diff1 = std::fabs(1.0 - suma1/suma3);
+    double diff2 = std::fabs(1.0 - suma2/suma3);    
+   
+    std::cout << ii <<"\t"<< suma1 <<"\t"<< suma2 <<"\t"<< suma3 << "\t" << diff1 << "\t" << diff2 <<std::endl;
     
     }    
   return 0;
