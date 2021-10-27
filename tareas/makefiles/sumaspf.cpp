@@ -23,17 +23,21 @@ double frac (double jj, double ji)
   return F;
 }
 
+
 int main (void)
 {
 
-  int N;
+  int N = 10;
   std::cout.precision(6);
   std::cout.setf(std::ios::scientific);
   
-  std::cout << "Número de términos a usar : ";
-  std::cin >> N;
-  for (int ii = 1.0; ii < N  ; ++ii)
+  //  std::cout << "Número de términos a usar : ";
+  //std::cin >> N;
+
+ 
+  for (int ii = 1.0; ii <= N  ; ++ii)
     {
+      
     REAL suma1 = sumone(ii);
     REAL suma2 = sumtwo(ii);
     REAL suma3 = sumthree(ii);
@@ -48,37 +52,31 @@ int main (void)
 REAL sumone(int N)
 {
   double sum1 = 0;
-    for (int k = 1.0; k < multi( 2 , N ) ; k++)
+    for (int k = 1.0; k <= 2.0 * N ; k++)
     {
-
- 
-  sum1 = sum1 +  pow(- 1.0 , N) * frac (N , N + 1.0) ;
-     
-    }    
-  
+  sum1 += pow( - 1.0 , k) * frac (k , k + 1.0) ;
+    }
  return sum1;
 }
 
 REAL sumtwo(int N)
 {
   double sum2 = 0 ;
-  for (int k=1.0; k < N ; k++)
+    for (int k=1.0; k <= N ; k++)
     {
-      sum2 = sum2 + frac(N+N,N+N+1.0) - frac(N+N-1.0,N+N) ;
+  sum2 += frac(2.0 * k,2.0*k +1.0) - frac(2.0*k-1.0,2.0*k) ;
     }
-
- return sum2;
+  return sum2;
 }
 
 
 REAL sumthree(int N)
 {
   double sum3;
-  for (int k=1.0; k < N ; k++)
+  for (int k=1.0; k <= N ; k++)
     {
-      sum3 = sum3 + frac (1.0 , multi( 2 * N , N + N +1.0));
+  sum3 = frac (1.0 , multi( 2.0 * k , 2.0 * k +1.0 ));
     }
-
  return sum3;
 }
 
