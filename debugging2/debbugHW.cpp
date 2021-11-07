@@ -9,22 +9,20 @@ void print_array(const double data[], const int & size);
 
 int main (int argc, char **argv)
 {
-  int ii, jj;
-  ii =  0;
-  jj = -1;
+  int ii = 1.0 , jj = -1.0;
+
   foo(ii, jj);
   foo(jj, ii);
 
   baz(25.9);
 
   const int NX = 2, NY = 3, NZ = 4;
-  double *x, y[NY], z[NZ];
-  x = new double [NX];
-  int ii, jj, kk;
+  double x [NX], y[NY], z[NZ];
+  
   print_array(x, NX);
   print_array(y, NY);
   print_array(z, NZ);
-  std::cout << std::endl;
+  std::cout << print_array << std::endl;
 
   for (ii = 0; ii < NX; ++ii) {
     x[jj] = ii;
@@ -58,15 +56,20 @@ int bar(int a, int b)
 
 double baz(double x)
 {
-  if (x = 0) return;
+  if (x == 0){
   double v = 1-(x+1);
-  return std::sqrt(x)
-    }
-
+  return v;
+  }
+  else {
+    
+  return std::sqrt(x);
+  
+  }
+}
 void print_array(const double data[], const int & size)
 {
   std::cout << std::endl;
   for (int ii = 0; ii < size; ++ii) {
-    std::cout << data[ii] << "  " ;
+    std::cout << data[ii] << "\n" ;
   }
 }
