@@ -11,10 +11,7 @@ int main (int argc, char **argv)
 {
   int ii = 1.0 , jj = -1.0;
 
-  foo(ii, jj);
-  foo(jj, ii);
-
-  baz(25.9);
+  std::cout << foo(jj, ii) << "\t" << baz(25.9)<< std::endl;
 
   const int NX = 2, NY = 3, NZ = 4;
   double x [NX], y[NY], z[NZ];
@@ -22,7 +19,7 @@ int main (int argc, char **argv)
   print_array(x, NX);
   print_array(y, NY);
   print_array(z, NZ);
-  std::cout << print_array << std::endl;
+  std::cout << std::endl;
 
   for (ii = 0; ii < NX; ++ii) {
     x[jj] = ii;
@@ -39,6 +36,7 @@ int main (int argc, char **argv)
   print_array(y-NZ, NZ);
   print_array(z + NZ + NY, NX);
   std::cout << std::endl;
+
 
   return EXIT_SUCCESS;
 }
@@ -72,4 +70,5 @@ void print_array(const double data[], const int & size)
   for (int ii = 0; ii < size; ++ii) {
     std::cout << data[ii] << "\n" ;
   }
+  delete [] data;
 }
