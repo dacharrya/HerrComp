@@ -14,27 +14,29 @@ int main (int argc, char **argv)
   std::cout << foo(ii, jj) << "\t" << foo(jj, ii) << "\t" << baz(25.9)<< std::endl;
 
   const int NX = 2, NY = 3, NZ = 4;
-  double x [NX], y[NY], z[NZ];
+  double x [2] = {0} , y[3] = {0}, z[4] = {0};
+
   
   print_array(x, NX);
   print_array(y, NY);
   print_array(z, NZ);
+
   std::cout << std::endl;
 
-  for (ii = 0; ii < NX; ++ii) {
+  for (int ii = 0; ii < NX; ++ii) {
     x[jj] = ii;
   }
-  print_array(x, NZ);
-  print_array(y, NY);
-  print_array(z, NZ + NY);
+  print_array(x, 4);
+  print_array(y, 3);
+  print_array(z, 7);
   std::cout << std::endl;
   for (jj = 0; jj < NY; ++jj) {
     x[jj] = ii;
     y[jj] = jj;
   }
-  print_array(x-NY, NY);
-  print_array(y-NZ, NZ);
-  print_array(z + NZ + NY, NX);
+  print_array(x - 3, 3);
+  print_array(y-4, 4);
+  print_array(z + 7, 2);
   std::cout << std::endl;
 
 
@@ -64,10 +66,11 @@ double baz(double x)
   
   }
 }
+
 void print_array(const double data[], const int & size)
 {
-  for (int ll = 0; ll < size; ++ll) {
-    std::cout << data[ll] << "\n" ;
+  for (int ii = 0; ii < size; ++ii) {
+    std::cout << data[ii] << "\n" ;
   }
   delete [] data;
 }
