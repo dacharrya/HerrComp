@@ -11,7 +11,7 @@ int main (int argc, char **argv)
 {
   int ii = 1.0 , jj = -1.0;
 
-  std::cout << foo(jj, ii) << "\t" << baz(25.9)<< std::endl;
+  std::cout << foo(ii, jj) << "\t" << foo(jj, ii) << "\t" << baz(25.9)<< std::endl;
 
   const int NX = 2, NY = 3, NZ = 4;
   double x [NX], y[NY], z[NZ];
@@ -66,9 +66,8 @@ double baz(double x)
 }
 void print_array(const double data[], const int & size)
 {
-  std::cout << std::endl;
-  for (int ii = 0; ii < size; ++ii) {
-    std::cout << data[ii] << "\n" ;
+  for (int ll = 0; ll < size; ++ll) {
+    std::cout << data[ll] << "\n" ;
   }
   delete [] data;
 }
